@@ -1,0 +1,241 @@
+\hypertarget{controller_8h}{}\doxysection{controller.\+h File Reference}
+\label{controller_8h}\index{controller.h@{controller.h}}
+{\ttfamily \#include \char`\"{}model\textbackslash{}chessgame.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}view\textbackslash{}mainwindow.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{controller_8h_a60de64d75454385b23995437f1d72669}{start}} ()
+\begin{DoxyCompactList}\small\item\em Kontroler gry przesyła informację z modelu do GUI odpowiada za rozpoczęcie gry oraz jej przebieg. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{controller_8h_ab10ce10dd022281e216ffa1fb854bceb}{new\+Game}} ()
+\item 
+void \mbox{\hyperlink{controller_8h_aa5cd0b13e9579fbd9b3f538ebae81d99}{quit\+Game}} ()
+\item 
+char \mbox{\hyperlink{controller_8h_a27cd5d0fc13f7b1dd77d60f2c4e9981b}{get\+Piece\+From\+Position}} (int row, int column)
+\begin{DoxyCompactList}\small\item\em get\+Piece\+From\+Position -\/ zwraca pionek z danej pozycjiz modelu \end{DoxyCompactList}\item 
+vector$<$ int $>$ $\ast$ \mbox{\hyperlink{controller_8h_a741e0f837753789974a36f8d47d90153}{check\+Available\+Moves}} (int row, int column)
+\begin{DoxyCompactList}\small\item\em funkcja zwracająca dostępne pola do poruszenia w postaci wektora dla pionka położonego (what\+Piece\+\_\+row,what\+Piece\+\_\+column) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{controller_8h_a1db4b744f24228ac6b4f00ddf70b4d53}{move\+Piece}} (int what\+Piece\+\_\+row, int what\+Piece\+\_\+column, int put\+Where\+\_\+row, int put\+Where\+\_\+column)
+\begin{DoxyCompactList}\small\item\em funkcja zapisująca bieżący ruch do This\+Move w modelu funkcja wykonująca ruch na tablicy board na podstawie informacji o ruchu This\+Move \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{controller_8h_af4146f71b69ce0a163e6d2cc85255dac}{get\+Whos\+Turn}} ()
+\begin{DoxyCompactList}\small\item\em getter pola whos\+Turn modelu \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{controller_8h_ad8d9f2778bfe7370443e5e3cf1a5d6cb}{check\+Piece\+Color}} (char piece)
+\begin{DoxyCompactList}\small\item\em funkcja zwracająca kolor pionka \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{controller_8h_acabbd2d85196877f29df62ebf41b7c2a}{display\+Turn}} ()
+\begin{DoxyCompactList}\small\item\em funkcja zmieniająca napis w mainwindow który gracz powinien wykonać teraz ruch \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{controller_8h_a9965b7ee2a65a7fd3f7b8ea71172e1ef}{display\+Check\+Info}} ()
+\begin{DoxyCompactList}\small\item\em funkcja zmieniająca napis w mainwindow czy obecnie jest Szach oraz dla którego gracza \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{controller_8h_aa84eacbbf107c38cbd512d9f7ddcdb55}{display\+End\+Of\+Game}} ()
+\begin{DoxyCompactList}\small\item\em funkcja wyświetlająca pop-\/up window w mainwindow z napisem koniec gry i szach mat dla którego gracza \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{controller_8h_a9515b0ea4b74cc3296de6f7026c0fb2a}{is\+Check\+Mate}} ()
+\begin{DoxyCompactList}\small\item\em funkcja zwracająca informacje o szach mat \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{controller_8h_ac7748d33f854120702115265fba4f6af}{display\+Captured\+Pieces}} ()
+\begin{DoxyCompactList}\small\item\em funkcja wywołująca w mainwindow widget ze zmieniającymi się pionkami, które zostały zbite \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{controller_8h_a6fcfdf2b7b4c1f80d846d4493834a401}{get\+Captured\+Piece}} (char color)
+\begin{DoxyCompactList}\small\item\em funkcja zwracająca dopiero co zbity pionek przez gracza o danym \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{controller_8h_af31f688368cfb3b3c545ecb80e5f2b0d}{get\+Count\+Captured\+Piece}} (char color)
+\begin{DoxyCompactList}\small\item\em funkcja zwracająca informację ile pionków zostało zbitych przez gracza o danym \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{controller_8h_a42a0e5d633fce21d12cb7d8a9b322a3f}{clear\+Captured}} ()
+\begin{DoxyCompactList}\small\item\em funkcja czyszcząca widget wyświetlający zbite pionki \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{controller_8h_a97feb8702b4bc47a3dee7bf3b220da2b}{update\+Game}} ()
+\begin{DoxyCompactList}\small\item\em funkcja updatująca grę po każdym ruchu (odświetla kwadraty, czyści parametry) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{controller_8h_a741e0f837753789974a36f8d47d90153}\label{controller_8h_a741e0f837753789974a36f8d47d90153}} 
+\index{controller.h@{controller.h}!checkAvailableMoves@{checkAvailableMoves}}
+\index{checkAvailableMoves@{checkAvailableMoves}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{checkAvailableMoves()}{checkAvailableMoves()}}
+{\footnotesize\ttfamily vector$<$ int $>$ $\ast$ check\+Available\+Moves (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption})}
+
+
+
+funkcja zwracająca dostępne pola do poruszenia w postaci wektora dla pionka położonego (what\+Piece\+\_\+row,what\+Piece\+\_\+column) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wiersz,kolumna} & pionka dla którego sprawdzane są możliwości ruchu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+wskaźnik do wektora dostępnych pól \texorpdfstring{$<$}{<}int wiersz1, int kolumna1,int wiersz2, int kolumna2 \texorpdfstring{$>$}{>} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{controller_8h_ad8d9f2778bfe7370443e5e3cf1a5d6cb}\label{controller_8h_ad8d9f2778bfe7370443e5e3cf1a5d6cb}} 
+\index{controller.h@{controller.h}!checkPieceColor@{checkPieceColor}}
+\index{checkPieceColor@{checkPieceColor}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{checkPieceColor()}{checkPieceColor()}}
+{\footnotesize\ttfamily char check\+Piece\+Color (\begin{DoxyParamCaption}\item[{char}]{piece }\end{DoxyParamCaption})}
+
+
+
+funkcja zwracająca kolor pionka 
+
+\begin{DoxyReturn}{Returns}
+kolor pionka WHITE or BLACK 
+\end{DoxyReturn}
+\mbox{\Hypertarget{controller_8h_a42a0e5d633fce21d12cb7d8a9b322a3f}\label{controller_8h_a42a0e5d633fce21d12cb7d8a9b322a3f}} 
+\index{controller.h@{controller.h}!clearCaptured@{clearCaptured}}
+\index{clearCaptured@{clearCaptured}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{clearCaptured()}{clearCaptured()}}
+{\footnotesize\ttfamily void clear\+Captured (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+funkcja czyszcząca widget wyświetlający zbite pionki 
+
+\mbox{\Hypertarget{controller_8h_ac7748d33f854120702115265fba4f6af}\label{controller_8h_ac7748d33f854120702115265fba4f6af}} 
+\index{controller.h@{controller.h}!displayCapturedPieces@{displayCapturedPieces}}
+\index{displayCapturedPieces@{displayCapturedPieces}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{displayCapturedPieces()}{displayCapturedPieces()}}
+{\footnotesize\ttfamily void display\+Captured\+Pieces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+funkcja wywołująca w mainwindow widget ze zmieniającymi się pionkami, które zostały zbite 
+
+\mbox{\Hypertarget{controller_8h_a9965b7ee2a65a7fd3f7b8ea71172e1ef}\label{controller_8h_a9965b7ee2a65a7fd3f7b8ea71172e1ef}} 
+\index{controller.h@{controller.h}!displayCheckInfo@{displayCheckInfo}}
+\index{displayCheckInfo@{displayCheckInfo}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{displayCheckInfo()}{displayCheckInfo()}}
+{\footnotesize\ttfamily void display\+Check\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+funkcja zmieniająca napis w mainwindow czy obecnie jest Szach oraz dla którego gracza 
+
+\mbox{\Hypertarget{controller_8h_aa84eacbbf107c38cbd512d9f7ddcdb55}\label{controller_8h_aa84eacbbf107c38cbd512d9f7ddcdb55}} 
+\index{controller.h@{controller.h}!displayEndOfGame@{displayEndOfGame}}
+\index{displayEndOfGame@{displayEndOfGame}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{displayEndOfGame()}{displayEndOfGame()}}
+{\footnotesize\ttfamily void display\+End\+Of\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+funkcja wyświetlająca pop-\/up window w mainwindow z napisem koniec gry i szach mat dla którego gracza 
+
+\mbox{\Hypertarget{controller_8h_acabbd2d85196877f29df62ebf41b7c2a}\label{controller_8h_acabbd2d85196877f29df62ebf41b7c2a}} 
+\index{controller.h@{controller.h}!displayTurn@{displayTurn}}
+\index{displayTurn@{displayTurn}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{displayTurn()}{displayTurn()}}
+{\footnotesize\ttfamily void display\+Turn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+funkcja zmieniająca napis w mainwindow który gracz powinien wykonać teraz ruch 
+
+\mbox{\Hypertarget{controller_8h_a6fcfdf2b7b4c1f80d846d4493834a401}\label{controller_8h_a6fcfdf2b7b4c1f80d846d4493834a401}} 
+\index{controller.h@{controller.h}!getCapturedPiece@{getCapturedPiece}}
+\index{getCapturedPiece@{getCapturedPiece}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{getCapturedPiece()}{getCapturedPiece()}}
+{\footnotesize\ttfamily char get\+Captured\+Piece (\begin{DoxyParamCaption}\item[{char}]{color }\end{DoxyParamCaption})}
+
+
+
+funkcja zwracająca dopiero co zbity pionek przez gracza o danym 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kolorze} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{controller_8h_af31f688368cfb3b3c545ecb80e5f2b0d}\label{controller_8h_af31f688368cfb3b3c545ecb80e5f2b0d}} 
+\index{controller.h@{controller.h}!getCountCapturedPiece@{getCountCapturedPiece}}
+\index{getCountCapturedPiece@{getCountCapturedPiece}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{getCountCapturedPiece()}{getCountCapturedPiece()}}
+{\footnotesize\ttfamily int get\+Count\+Captured\+Piece (\begin{DoxyParamCaption}\item[{char}]{color }\end{DoxyParamCaption})}
+
+
+
+funkcja zwracająca informację ile pionków zostało zbitych przez gracza o danym 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kolorze} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+długość wektora captured 
+\end{DoxyReturn}
+\mbox{\Hypertarget{controller_8h_a27cd5d0fc13f7b1dd77d60f2c4e9981b}\label{controller_8h_a27cd5d0fc13f7b1dd77d60f2c4e9981b}} 
+\index{controller.h@{controller.h}!getPieceFromPosition@{getPieceFromPosition}}
+\index{getPieceFromPosition@{getPieceFromPosition}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{getPieceFromPosition()}{getPieceFromPosition()}}
+{\footnotesize\ttfamily char get\+Piece\+From\+Position (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption})}
+
+
+
+get\+Piece\+From\+Position -\/ zwraca pionek z danej pozycjiz modelu 
+
+\mbox{\Hypertarget{controller_8h_af4146f71b69ce0a163e6d2cc85255dac}\label{controller_8h_af4146f71b69ce0a163e6d2cc85255dac}} 
+\index{controller.h@{controller.h}!getWhosTurn@{getWhosTurn}}
+\index{getWhosTurn@{getWhosTurn}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{getWhosTurn()}{getWhosTurn()}}
+{\footnotesize\ttfamily char get\+Whos\+Turn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter pola whos\+Turn modelu 
+
+\begin{DoxyReturn}{Returns}
+kolor gracza którego jest teraz kolej 
+\end{DoxyReturn}
+\mbox{\Hypertarget{controller_8h_a9515b0ea4b74cc3296de6f7026c0fb2a}\label{controller_8h_a9515b0ea4b74cc3296de6f7026c0fb2a}} 
+\index{controller.h@{controller.h}!isCheckMate@{isCheckMate}}
+\index{isCheckMate@{isCheckMate}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{isCheckMate()}{isCheckMate()}}
+{\footnotesize\ttfamily bool is\+Check\+Mate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+funkcja zwracająca informacje o szach mat 
+
+\begin{DoxyReturn}{Returns}
+false gdy nie ma szach mat 
+\end{DoxyReturn}
+\mbox{\Hypertarget{controller_8h_a1db4b744f24228ac6b4f00ddf70b4d53}\label{controller_8h_a1db4b744f24228ac6b4f00ddf70b4d53}} 
+\index{controller.h@{controller.h}!movePiece@{movePiece}}
+\index{movePiece@{movePiece}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{movePiece()}{movePiece()}}
+{\footnotesize\ttfamily void move\+Piece (\begin{DoxyParamCaption}\item[{int}]{what\+Piece\+\_\+row,  }\item[{int}]{what\+Piece\+\_\+column,  }\item[{int}]{put\+Where\+\_\+row,  }\item[{int}]{put\+Where\+\_\+column }\end{DoxyParamCaption})}
+
+
+
+funkcja zapisująca bieżący ruch do This\+Move w modelu funkcja wykonująca ruch na tablicy board na podstawie informacji o ruchu This\+Move 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wiersz,kolumna} & poruszającego się pionka oraz wiersz, kolumna dokąd pionek sieporusza \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{controller_8h_ab10ce10dd022281e216ffa1fb854bceb}\label{controller_8h_ab10ce10dd022281e216ffa1fb854bceb}} 
+\index{controller.h@{controller.h}!newGame@{newGame}}
+\index{newGame@{newGame}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{newGame()}{newGame()}}
+{\footnotesize\ttfamily void new\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{controller_8h_aa5cd0b13e9579fbd9b3f538ebae81d99}\label{controller_8h_aa5cd0b13e9579fbd9b3f538ebae81d99}} 
+\index{controller.h@{controller.h}!quitGame@{quitGame}}
+\index{quitGame@{quitGame}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{quitGame()}{quitGame()}}
+{\footnotesize\ttfamily void quit\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{controller_8h_a60de64d75454385b23995437f1d72669}\label{controller_8h_a60de64d75454385b23995437f1d72669}} 
+\index{controller.h@{controller.h}!start@{start}}
+\index{start@{start}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Kontroler gry przesyła informację z modelu do GUI odpowiada za rozpoczęcie gry oraz jej przebieg. 
+
+\mbox{\Hypertarget{controller_8h_a97feb8702b4bc47a3dee7bf3b220da2b}\label{controller_8h_a97feb8702b4bc47a3dee7bf3b220da2b}} 
+\index{controller.h@{controller.h}!updateGame@{updateGame}}
+\index{updateGame@{updateGame}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{updateGame()}{updateGame()}}
+{\footnotesize\ttfamily void update\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+funkcja updatująca grę po każdym ruchu (odświetla kwadraty, czyści parametry) 
+

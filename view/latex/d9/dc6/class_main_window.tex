@@ -1,0 +1,175 @@
+\hypertarget{class_main_window}{}\doxysection{Main\+Window Class Reference}
+\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+klasa \mbox{\hyperlink{class_main_window}{Main\+Window}} dziedzicząca po QMain\+Window odpowiada za stworzenie, wyświetlanie wszystkich elementów GUI, ich rozłożenie oraz update przy zmianie parametrów gry  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d9/dc6/class_main_window}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a8ab9c4939ef0bd9b8d8fa5daa763ee66}{validate\+Button\+Click}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_af8af8d410571b80a7e019683321c8df0}{clicked}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a4195422fe1346c1aa9c640715dfe73cb}{start\+New\+Game}} ()
+\begin{DoxyCompactList}\small\item\em tworzy przycisk stwórz nową grę \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_aa39c1f34f982a1441f510aa1b7aa1724}{chess\+Label}} ()
+\begin{DoxyCompactList}\small\item\em tworzy Label informujący o kolejności ruchu \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_ac4a19e31822e02d19b029d798a53a7fd}{create\+Board}} ()
+\begin{DoxyCompactList}\small\item\em tworzy tablicę \mbox{\hyperlink{class_board}{Board}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a132243f5aabfca9b5cc6d4936f38502f}{add\+Pieces}} ()
+\begin{DoxyCompactList}\small\item\em dodaje pionki do tablicy \mbox{\hyperlink{class_board}{Board}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a74f2a4f9dbaff554fb85b5a23ca29f82}{set\+Turn}} (QString napis)
+\begin{DoxyCompactList}\small\item\em ustala napis informujący o kolejności ruchu \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_aad7be81d8631178504a64396a6c91b2e}{display\+Check\+And\+Captured}} ()
+\begin{DoxyCompactList}\small\item\em tworzy QWidget ze zbitymi pionkami \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_ab9be5a03e0be3d335548e85599dd6044}{set\+Check}} (QString napis)
+\item 
+void \mbox{\hyperlink{class_main_window_aa5f9c3496a24a30a0b7e8b8b024d12fe}{add\+To\+Captured}} (char color, char c, int qty)
+\item 
+void \mbox{\hyperlink{class_main_window_a26a17b79e62fcd6a1e82e2cd92026c3e}{captured\+Fields\+Init}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_afd1a8fd5c527fa048e866cdbe10721d3}{clear\+Captured}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_ac13e8caf2882a5a7aa4524868c46723f}{clear\+Board}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+klasa \mbox{\hyperlink{class_main_window}{Main\+Window}} dziedzicząca po QMain\+Window odpowiada za stworzenie, wyświetlanie wszystkich elementów GUI, ich rozłożenie oraz update przy zmianie parametrów gry 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}\label{class_main_window_a996c5a2b6f77944776856f08ec30858d}} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor. 
+
+tworzy layout, dodaje wszystkie elementu GUI oraz ustala ich parametry 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_window_a132243f5aabfca9b5cc6d4936f38502f}\label{class_main_window_a132243f5aabfca9b5cc6d4936f38502f}} 
+\index{MainWindow@{MainWindow}!addPieces@{addPieces}}
+\index{addPieces@{addPieces}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{addPieces()}{addPieces()}}
+{\footnotesize\ttfamily void Main\+Window\+::add\+Pieces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+dodaje pionki do tablicy \mbox{\hyperlink{class_board}{Board}} 
+
+\mbox{\Hypertarget{class_main_window_aa5f9c3496a24a30a0b7e8b8b024d12fe}\label{class_main_window_aa5f9c3496a24a30a0b7e8b8b024d12fe}} 
+\index{MainWindow@{MainWindow}!addToCaptured@{addToCaptured}}
+\index{addToCaptured@{addToCaptured}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{addToCaptured()}{addToCaptured()}}
+{\footnotesize\ttfamily void Main\+Window\+::add\+To\+Captured (\begin{DoxyParamCaption}\item[{char}]{color,  }\item[{char}]{c,  }\item[{int}]{qty }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_main_window_a26a17b79e62fcd6a1e82e2cd92026c3e}\label{class_main_window_a26a17b79e62fcd6a1e82e2cd92026c3e}} 
+\index{MainWindow@{MainWindow}!capturedFieldsInit@{capturedFieldsInit}}
+\index{capturedFieldsInit@{capturedFieldsInit}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{capturedFieldsInit()}{capturedFieldsInit()}}
+{\footnotesize\ttfamily void Main\+Window\+::captured\+Fields\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_main_window_aa39c1f34f982a1441f510aa1b7aa1724}\label{class_main_window_aa39c1f34f982a1441f510aa1b7aa1724}} 
+\index{MainWindow@{MainWindow}!chessLabel@{chessLabel}}
+\index{chessLabel@{chessLabel}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{chessLabel()}{chessLabel()}}
+{\footnotesize\ttfamily void Main\+Window\+::chess\+Label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+tworzy Label informujący o kolejności ruchu 
+
+\mbox{\Hypertarget{class_main_window_ac13e8caf2882a5a7aa4524868c46723f}\label{class_main_window_ac13e8caf2882a5a7aa4524868c46723f}} 
+\index{MainWindow@{MainWindow}!clearBoard@{clearBoard}}
+\index{clearBoard@{clearBoard}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{clearBoard()}{clearBoard()}}
+{\footnotesize\ttfamily void Main\+Window\+::clear\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_main_window_afd1a8fd5c527fa048e866cdbe10721d3}\label{class_main_window_afd1a8fd5c527fa048e866cdbe10721d3}} 
+\index{MainWindow@{MainWindow}!clearCaptured@{clearCaptured}}
+\index{clearCaptured@{clearCaptured}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{clearCaptured()}{clearCaptured()}}
+{\footnotesize\ttfamily void Main\+Window\+::clear\+Captured (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_main_window_af8af8d410571b80a7e019683321c8df0}\label{class_main_window_af8af8d410571b80a7e019683321c8df0}} 
+\index{MainWindow@{MainWindow}!clicked@{clicked}}
+\index{clicked@{clicked}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{clicked}{clicked}}
+{\footnotesize\ttfamily void Main\+Window\+::clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_main_window_ac4a19e31822e02d19b029d798a53a7fd}\label{class_main_window_ac4a19e31822e02d19b029d798a53a7fd}} 
+\index{MainWindow@{MainWindow}!createBoard@{createBoard}}
+\index{createBoard@{createBoard}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{createBoard()}{createBoard()}}
+{\footnotesize\ttfamily void Main\+Window\+::create\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+tworzy tablicę \mbox{\hyperlink{class_board}{Board}} 
+
+\mbox{\Hypertarget{class_main_window_aad7be81d8631178504a64396a6c91b2e}\label{class_main_window_aad7be81d8631178504a64396a6c91b2e}} 
+\index{MainWindow@{MainWindow}!displayCheckAndCaptured@{displayCheckAndCaptured}}
+\index{displayCheckAndCaptured@{displayCheckAndCaptured}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{displayCheckAndCaptured()}{displayCheckAndCaptured()}}
+{\footnotesize\ttfamily void Main\+Window\+::display\+Check\+And\+Captured (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+tworzy QWidget ze zbitymi pionkami 
+
+\mbox{\Hypertarget{class_main_window_ab9be5a03e0be3d335548e85599dd6044}\label{class_main_window_ab9be5a03e0be3d335548e85599dd6044}} 
+\index{MainWindow@{MainWindow}!setCheck@{setCheck}}
+\index{setCheck@{setCheck}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{setCheck()}{setCheck()}}
+{\footnotesize\ttfamily void Main\+Window\+::set\+Check (\begin{DoxyParamCaption}\item[{QString}]{napis }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_main_window_a74f2a4f9dbaff554fb85b5a23ca29f82}\label{class_main_window_a74f2a4f9dbaff554fb85b5a23ca29f82}} 
+\index{MainWindow@{MainWindow}!setTurn@{setTurn}}
+\index{setTurn@{setTurn}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{setTurn()}{setTurn()}}
+{\footnotesize\ttfamily void Main\+Window\+::set\+Turn (\begin{DoxyParamCaption}\item[{QString}]{napis }\end{DoxyParamCaption})}
+
+
+
+ustala napis informujący o kolejności ruchu 
+
+\mbox{\Hypertarget{class_main_window_a4195422fe1346c1aa9c640715dfe73cb}\label{class_main_window_a4195422fe1346c1aa9c640715dfe73cb}} 
+\index{MainWindow@{MainWindow}!startNewGame@{startNewGame}}
+\index{startNewGame@{startNewGame}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{startNewGame()}{startNewGame()}}
+{\footnotesize\ttfamily void Main\+Window\+::start\+New\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+tworzy przycisk stwórz nową grę 
+
+\mbox{\Hypertarget{class_main_window_a8ab9c4939ef0bd9b8d8fa5daa763ee66}\label{class_main_window_a8ab9c4939ef0bd9b8d8fa5daa763ee66}} 
+\index{MainWindow@{MainWindow}!validateButtonClick@{validateButtonClick}}
+\index{validateButtonClick@{validateButtonClick}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{validateButtonClick}{validateButtonClick}}
+{\footnotesize\ttfamily void Main\+Window\+::validate\+Button\+Click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+

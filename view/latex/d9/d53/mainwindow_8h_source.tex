@@ -1,0 +1,54 @@
+\hypertarget{mainwindow_8h_source}{}\doxysection{mainwindow.\+h}
+\mbox{\hyperlink{mainwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MAINWINDOW\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MAINWINDOW\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QAction>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QLabel>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QMainWindow>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <QPushButton>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <QHBoxLayout>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{board_8h}{view\(\backslash\)board.h}}"{}}}
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_main_window}{MainWindow}} : \textcolor{keyword}{public} QMainWindow}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     Q\_OBJECT}
+\DoxyCodeLine{19     QWidget *widget;}
+\DoxyCodeLine{20     QWidget *wdg, *wdg1;}
+\DoxyCodeLine{21     QPushButton *train\_button;}
+\DoxyCodeLine{22     QLabel *chess;}
+\DoxyCodeLine{23     QLabel *turnSign;}
+\DoxyCodeLine{24     QWidget *capturedByWhite,*capturedByBlack;}
+\DoxyCodeLine{25     QLabel *capturedByWhiteL[4][4],*capturedByBlackL[4][4];}
+\DoxyCodeLine{26     QGridLayout *blackgridlayout,*whitegridlayout;}
+\DoxyCodeLine{27     QLabel *checkSign;}
+\DoxyCodeLine{28     QHBoxLayout *layout\_dlugosc;}
+\DoxyCodeLine{29     QHBoxLayout *layout\_dlugosc2;}
+\DoxyCodeLine{30     QVBoxLayout *layout\_wysokosc;}
+\DoxyCodeLine{31     QVBoxLayout *layout\_wysokosc2;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \mbox{\hyperlink{class_board}{Board}} *board;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{public}:}
+\DoxyCodeLine{40     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{MainWindow}}(QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a4195422fe1346c1aa9c640715dfe73cb}{startNewGame}}();}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_aa39c1f34f982a1441f510aa1b7aa1724}{chessLabel}}();}
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_ac4a19e31822e02d19b029d798a53a7fd}{createBoard}}();}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a132243f5aabfca9b5cc6d4936f38502f}{addPieces}}();}
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a74f2a4f9dbaff554fb85b5a23ca29f82}{setTurn}}(QString napis);}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_aad7be81d8631178504a64396a6c91b2e}{displayCheckAndCaptured}}();}
+\DoxyCodeLine{65     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_ab9be5a03e0be3d335548e85599dd6044}{setCheck}}(QString napis);}
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_aa5f9c3496a24a30a0b7e8b8b024d12fe}{addToCaptured}}(\textcolor{keywordtype}{char} color, \textcolor{keywordtype}{char} c, \textcolor{keywordtype}{int} qty);}
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a26a17b79e62fcd6a1e82e2cd92026c3e}{capturedFieldsInit}}();}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_afd1a8fd5c527fa048e866cdbe10721d3}{clearCaptured}}();}
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_ac13e8caf2882a5a7aa4524868c46723f}{clearBoard}}();}
+\DoxyCodeLine{70 signals:}
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_af8af8d410571b80a7e019683321c8df0}{clicked}}();}
+\DoxyCodeLine{72 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{73     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_window_a8ab9c4939ef0bd9b8d8fa5daa763ee66}{validateButtonClick}}();}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MAINWINDOW\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,42 @@
+\hypertarget{player_8h_source}{}\doxysection{player.\+h}
+\label{player_8h_source}\index{C:/Users/mg27w/Documents/untitled1/model/player.h@{C:/Users/mg27w/Documents/untitled1/model/player.h}}
+\mbox{\hyperlink{player_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PLAYER\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PLAYER\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_player}{Player}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11 \textcolor{keyword}{private}:}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \textcolor{keywordtype}{char} color; }
+\DoxyCodeLine{14     \textcolor{keywordtype}{bool} hasCheck; }
+\DoxyCodeLine{15     std::vector< char > *capturedPieces = \textcolor{keyword}{nullptr}; }
+\DoxyCodeLine{20     \textcolor{keyword}{struct }Position \{}
+\DoxyCodeLine{21         \textcolor{keywordtype}{int} row;    }
+\DoxyCodeLine{22         \textcolor{keywordtype}{int} column; }
+\DoxyCodeLine{23     \} king;}
+\DoxyCodeLine{30     \textcolor{keyword}{struct }Castle\{}
+\DoxyCodeLine{31         \textcolor{keywordtype}{bool} king\_l; }
+\DoxyCodeLine{32         \textcolor{keywordtype}{bool} king\_r; }
+\DoxyCodeLine{33     \} castle;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{public}:}
+\DoxyCodeLine{42     \mbox{\hyperlink{class_player_ac66f2870c74e0e66a03e0e148e31bdbe}{Player}}(\textcolor{keywordtype}{char} color);}
+\DoxyCodeLine{46     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_player_a3ae3e8f638182787247644447b1caf90}{getHasCheck}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a8288fda62dfdc4549c62f0b26bc0750c}{setHasCheck}}(\textcolor{keywordtype}{bool} value);}
+\DoxyCodeLine{52     std::vector<char>* \mbox{\hyperlink{class_player_a0acdf61210351a306a218fc9c5229fc7}{getCapturedPieces}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a64733bfa2aaa2f4773e5c0f9525cb784}{addToCaptured}}(\textcolor{keywordtype}{char} piece);}
+\DoxyCodeLine{62     Position \mbox{\hyperlink{class_player_a77efd3a180f0495096b56c1b6ec2e16f}{getKingsPosition}}();}
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a8ce58d9a20bbe5ca3120da449ba32fe7}{setKingPosition}}(\textcolor{keywordtype}{int} row, \textcolor{keywordtype}{int} column);}
+\DoxyCodeLine{72     Castle \mbox{\hyperlink{class_player_a5451860402414187c744117b454b0f76}{getCastleParam}}();}
+\DoxyCodeLine{79     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a7249f4bf4b1ba8365dc92e99c55b8457}{setCastleLefttoFalse}}();}
+\DoxyCodeLine{80     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a1a739390192e8c72887aa5fa09d3e2eb}{setCastleRighttoFalse}}();}
+\DoxyCodeLine{85     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_player_a24069ae53f7cf4a071a2fe1c55d256fc}{isCastleFalse}}();}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// PLAYER\_H}}
+
+\end{DoxyCode}

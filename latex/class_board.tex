@@ -1,0 +1,126 @@
+\hypertarget{class_board}{}\doxysection{Board Class Reference}
+\label{class_board}\index{Board@{Board}}
+
+
+klasa \mbox{\hyperlink{class_board}{Board}}, dziedzicząca po QWidget tworzy 64 obiekty \mbox{\hyperlink{class_board_piece}{Board\+Piece}} w GUI wyświetla je jako planszę \mbox{[}8\mbox{]}\mbox{[}8\mbox{]} odpowiada za walidację klikniecia na kwadrat orz ich podświetlanie oraz odznaczanie odbiera sygnał z przycisku przechowuje informacje o zaznaczonych polach  
+
+
+
+
+{\ttfamily \#include $<$board.\+h$>$}
+
+Inheritance diagram for Board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_board}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_board_ae7e23b09d82af46f4f8d42538147b02b}{validate\+Click}} (int row, int column)
+\begin{DoxyCompactList}\small\item\em slot validate\+Click jest wywołany po naciśnięciu odpowiedniego kwadratu \mbox{\hyperlink{class_board_piece}{Board\+Piece}} na planszy waliduje ruch -\/ dokładny opis znajduje się w ciele funkcji \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_a5da15a0722bd700581cd948097e4c7da}{validate\+Button\+Click}} ()
+\begin{DoxyCompactList}\small\item\em slot validate\+Button\+Click wywołuje funkcję tworzącą nową grę \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_board_ad94f044a14025dc1c3fede4e3828898b}{Board}} (QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_board_piece}{Board\+Piece}} $\ast$ \mbox{\hyperlink{class_board_aff591d76d6010d68cc806b7d8b70caa5}{get\+Selected\+Board\+Piece}} () const
+\begin{DoxyCompactList}\small\item\em getter i setter pola selected\+Board\+Piece \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_aec9de8b63260a4fd07fe1685a0180653}{set\+Selected\+Board\+Piece}} (\mbox{\hyperlink{class_board_piece}{Board\+Piece}} $\ast$value)
+\item 
+void \mbox{\hyperlink{class_board_a48c92ae4e8e0527f9df4a27328fe9ff8}{add\+Pieces}} ()
+\begin{DoxyCompactList}\small\item\em funkcja dodaje pionki na planszy zgaodnie z ustawieniem z modelu \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_af83b90749b7c691206b5e67ad27e841e}{clear\+All\+After\+Move}} ()
+\begin{DoxyCompactList}\small\item\em funkcja odznacza podświetlenie kwadratów i czyści parametry związane z możliwością ruchu \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+klasa \mbox{\hyperlink{class_board}{Board}}, dziedzicząca po QWidget tworzy 64 obiekty \mbox{\hyperlink{class_board_piece}{Board\+Piece}} w GUI wyświetla je jako planszę \mbox{[}8\mbox{]}\mbox{[}8\mbox{]} odpowiada za walidację klikniecia na kwadrat orz ich podświetlanie oraz odznaczanie odbiera sygnał z przycisku przechowuje informacje o zaznaczonych polach 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_board_ad94f044a14025dc1c3fede4e3828898b}\label{class_board_ad94f044a14025dc1c3fede4e3828898b}} 
+\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{Board()}{Board()}}
+{\footnotesize\ttfamily Board\+::\+Board (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor. 
+
+ustawia grid layout i dodaje Board\+Pieces łączy sygnał naciśnięcia na każdy kwadrat \mbox{\hyperlink{class_board_piece}{Board\+Piece}} z funckją validate\+Click ustawia kolory kwadratów na biały lub czarny 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_board_a48c92ae4e8e0527f9df4a27328fe9ff8}\label{class_board_a48c92ae4e8e0527f9df4a27328fe9ff8}} 
+\index{Board@{Board}!addPieces@{addPieces}}
+\index{addPieces@{addPieces}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{addPieces()}{addPieces()}}
+{\footnotesize\ttfamily void Board\+::add\+Pieces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+funkcja dodaje pionki na planszy zgaodnie z ustawieniem z modelu 
+
+\mbox{\Hypertarget{class_board_af83b90749b7c691206b5e67ad27e841e}\label{class_board_af83b90749b7c691206b5e67ad27e841e}} 
+\index{Board@{Board}!clearAllAfterMove@{clearAllAfterMove}}
+\index{clearAllAfterMove@{clearAllAfterMove}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{clearAllAfterMove()}{clearAllAfterMove()}}
+{\footnotesize\ttfamily void Board\+::clear\+All\+After\+Move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+funkcja odznacza podświetlenie kwadratów i czyści parametry związane z możliwością ruchu 
+
+\mbox{\Hypertarget{class_board_aff591d76d6010d68cc806b7d8b70caa5}\label{class_board_aff591d76d6010d68cc806b7d8b70caa5}} 
+\index{Board@{Board}!getSelectedBoardPiece@{getSelectedBoardPiece}}
+\index{getSelectedBoardPiece@{getSelectedBoardPiece}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{getSelectedBoardPiece()}{getSelectedBoardPiece()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_board_piece}{Board\+Piece}} $\ast$ Board\+::get\+Selected\+Board\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+getter i setter pola selected\+Board\+Piece 
+
+\mbox{\Hypertarget{class_board_aec9de8b63260a4fd07fe1685a0180653}\label{class_board_aec9de8b63260a4fd07fe1685a0180653}} 
+\index{Board@{Board}!setSelectedBoardPiece@{setSelectedBoardPiece}}
+\index{setSelectedBoardPiece@{setSelectedBoardPiece}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{setSelectedBoardPiece()}{setSelectedBoardPiece()}}
+{\footnotesize\ttfamily void Board\+::set\+Selected\+Board\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_board_piece}{Board\+Piece}} $\ast$}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_board_a5da15a0722bd700581cd948097e4c7da}\label{class_board_a5da15a0722bd700581cd948097e4c7da}} 
+\index{Board@{Board}!validateButtonClick@{validateButtonClick}}
+\index{validateButtonClick@{validateButtonClick}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{validateButtonClick}{validateButtonClick}}
+{\footnotesize\ttfamily void Board\+::validate\+Button\+Click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+slot validate\+Button\+Click wywołuje funkcję tworzącą nową grę 
+
+\mbox{\Hypertarget{class_board_ae7e23b09d82af46f4f8d42538147b02b}\label{class_board_ae7e23b09d82af46f4f8d42538147b02b}} 
+\index{Board@{Board}!validateClick@{validateClick}}
+\index{validateClick@{validateClick}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{validateClick}{validateClick}}
+{\footnotesize\ttfamily void Board\+::validate\+Click (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+slot validate\+Click jest wywołany po naciśnięciu odpowiedniego kwadratu \mbox{\hyperlink{class_board_piece}{Board\+Piece}} na planszy waliduje ruch -\/ dokładny opis znajduje się w ciele funkcji 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wiersz,kolumna} & klikniętego kwadratu \\
+\hline
+\end{DoxyParams}
+czy to pole jest już zaznaczone? (isselected)
+
+tak -\/ odznaczamy
+
+nie -\/ czy to pole jest jednym z możliwych ruchów?
+
+tak -\/ wykonaj ruch
+
+nie -\/ czy to pole zawiera pionek gracza którego jest kolej?

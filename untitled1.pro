@@ -3,19 +3,21 @@ CONFIG += console c++11
 CONFIG -= app_bundle
 
 SOURCES += \
-        board.cpp \
-        chessgame.cpp \
         controller.cpp \
         main.cpp \
-        mainwindow.cpp \
-        player.cpp
+        model/chessgame.cpp \
+        model/player.cpp \
+        view/board.cpp \
+        view/boardpiece.cpp \
+        view/mainwindow.cpp
 
 HEADERS += \
-    board.h \
-    chessgame.h \
     controller.h \
-    mainwindow.h \
-    player.h
+    model/chessgame.h \
+    model/player.h \
+    view/board.h \
+    view/boardpiece.h \
+    view/mainwindow.h
 
 QT += widgets
 

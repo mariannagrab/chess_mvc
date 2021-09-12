@@ -1,0 +1,567 @@
+\hypertarget{class_chess_game}{}\doxysection{Chess\+Game Class Reference}
+\label{class_chess_game}\index{ChessGame@{ChessGame}}
+
+
+{\ttfamily \#include $<$chessgame.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\char \mbox{\hyperlink{class_chess_game_ac33456bee1050132e25817da287cbed4}{get\+Piece\+Color}} (T x, T y=0)
+\begin{DoxyCompactList}\small\item\em template ustalający kolor pionka na planszy na podstawie albo współrzędnych tablicy\+: rzędu i kolumny zdefiniowanych jako int od 0 do 7 albo pionka\+: char wilkiej lub małej litery \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_chess_game_a7c9d1caa97c7ca5737f187a6066662b2}{Chess\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chess_game_a20298d8900be674dd560732f7d27e641}{initialize\+Board}} ()
+\begin{DoxyCompactList}\small\item\em funkcja tworząca początkowe ustawienie pionków na planszy \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_chess_game_a262ec5b9db57f8d89a1d706d75352155}{get\+Whos\+Turn}} ()
+\begin{DoxyCompactList}\small\item\em getter pola whos\+Turn \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chess_game_a58f2e5c3f05782d786b473c29000c3a5}{change\+Turn}} ()
+\begin{DoxyCompactList}\small\item\em setter pola whos\+Turn ustawia pole na przeciwne do teraźniejszego, jeżeli kolej była białego gracza to teraz będzie czarnego \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_chess_game_a8c79d5b20d610a97ae95cdea682b2223}{check\+Piece\+At\+Position}} (int row, int column)
+\begin{DoxyCompactList}\small\item\em funkcja sprawdzająca tablicę board\mbox{[}8\mbox{]}\mbox{[}8\mbox{]} jaki pionek znajduje sie na danej pozycji \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_chess_game_a8d6234d5c417f5deea1e368abba8932b}{is\+Move\+Valid}} (Move move)
+\begin{DoxyCompactList}\small\item\em funkcja is\+Move\+Valid po podaniu struktury move sprawdza czy ruch jest możliwy dla danego pionka (w zależności od figury) na dane pole sprawdza również czy na docelowym polu nie ma pionka w tym samym kolorze funkcja ta wykorzystywana jest przy podświetlaniu pól aktywnych na planszy jak i pprzy sprawdzeniu szacha i szach mat \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_chess_game_a7d533965bbf8c2bd3ed52177217cd939}{check\+Diagonal\+Move}} (Move move)
+\begin{DoxyCompactList}\small\item\em funkcja pomocnicza przy ustalaniu czy ruch po skosie jest możliwy wywoływana w is\+Move\+Valid dla królowej i gońca \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chess_game_abb28166d01976848b4737037b41744c1}{move\+Piece}} ()
+\begin{DoxyCompactList}\small\item\em funkcja move\+Piece wykonująca ruch na tablicy board na podstawie informacji o ruchu This\+Move usuwa pionek i stawia go w nowy miejscu wywołuje funkcje aktualizujące parametry gry \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chess_game_ad1e431f86de755e6caddebc25db7298f}{do\+Castle\+Move}} ()
+\begin{DoxyCompactList}\small\item\em funkcja pomocnicza wykonująca ruch roszadowy dla This\+Move \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_chess_game_a77814bbcb54f169c079a68cb24d82134}{check\+Check}} ()
+\begin{DoxyCompactList}\small\item\em funkcja sprawdzająca czy w obecnym ustawieniu pionków na tablicy board jest możliwość zbicia króla jakiegokolwiek koloru czyli czy jest szach \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_chess_game_aeb6384535c736f207d8b01a0cad0bce0}{check\+Check}} (char color, int what\+Piece\+\_\+row, int what\+Piece\+\_\+column)
+\begin{DoxyCompactList}\small\item\em nadpisanie metody check\+Check\+: funkcja sprawdzająca czy w nowym potencjalnym ustawieniu króla będzie szach wywoływana przy sprawdzaniu szach mat \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chess_game_a8334c75e5ccb6115d42bbe913a902ed2}{set\+Checkto\+False}} ()
+\begin{DoxyCompactList}\small\item\em setter funkcja po sprawdzeniu czy jest szach na planszy ustawia has\+Check na false dla obu graczy \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_chess_game_a5c0041a6e90e5c73986877a042193b02}{check\+Mate}} (char piece)
+\begin{DoxyCompactList}\small\item\em funkcja sprawdzająca czy dla obecnego ustawienia pionków jest szach mat \end{DoxyCompactList}\item 
+vector$<$ int $>$ $\ast$ \mbox{\hyperlink{class_chess_game_a53b5e3f219be81159db630c1b2a83ddc}{return\+Available\+Fields}} (int what\+Piece\+\_\+row, int what\+Piece\+\_\+column)
+\begin{DoxyCompactList}\small\item\em funkcja zwracająca dostępne pola do poruszenia w postaci wektora dla pionka położonego (what\+Piece\+\_\+row,what\+Piece\+\_\+column) wywoływana w kontrolerze \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chess_game_a45cd11f1d7ef389743d859f2a0237ca5}{add\+To\+Captured}} (char piece)
+\begin{DoxyCompactList}\small\item\em funkcja dodająca zbity pionek do wektora wzbitych pionków gracza \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chess_game_afd41c67e994941cf7fa90a778a11145d}{save\+This\+Move}} (char \+\_\+figure, int \+\_\+what\+Piece\+\_\+row, int \+\_\+what\+Piece\+\_\+column, int \+\_\+put\+Where\+\_\+row, int \+\_\+put\+Where\+\_\+column)
+\begin{DoxyCompactList}\small\item\em setter obiektu This\+Move ustawia obecny/potencjalny (jeszcze nie dokonany) ruch \end{DoxyCompactList}\item 
+Move \mbox{\hyperlink{class_chess_game_a384a218c740127f0ff61429f6e34fdcc}{get\+Last\+Move}} ()
+\begin{DoxyCompactList}\small\item\em getter obiektu Last\+Move zwraca ostatni ruch jaki był wykonany \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chess_game_a1834fc1be8509272f29bb72a5e50847e}{save\+Last\+Move}} (char \+\_\+figure, int \+\_\+what\+Piece\+\_\+row, int \+\_\+what\+Piece\+\_\+column, int \+\_\+put\+Where\+\_\+row, int \+\_\+put\+Where\+\_\+column)
+\begin{DoxyCompactList}\small\item\em setter obiektu Last\+Move ustawia ostatni ruch jaki był wykonany \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_chess_game_abe5619f0ea3cbc98f601376059d23ca3}{double\+Pawn\+Move}} (Move move)
+\begin{DoxyCompactList}\small\item\em funkcja pomocnicza przy ustalaniu czy ruch pionka o dwa pola do przodu jest możliwy wywoływana w is\+Move\+Valid \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chess_game_abd323d512455c8518bfd2bf26ec2e812}{save\+New\+Kings\+Position}} (char piece, int row, int column)
+\begin{DoxyCompactList}\small\item\em funkcja zapisująca nową pozycję króla wywoływana po wykonaniu ruchu w move\+Piece \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_chess_game_a2dadf58306caae13d3a784e4b5a085cd}{is\+Kings\+Move\+Valid}} (char color, int put\+Where\+\_\+row, int put\+Where\+\_\+column)
+\begin{DoxyCompactList}\small\item\em funkcja spprawdzająca czy potencjalny ruch króla jest możliwy wywoływana przy sprawdzeniu czy ruch jest możliwy oraz przy sprawdzeniu szach mat \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chess_game_ae00a5900fa9d93d5d59e9892dd24edcc}{save\+Castle\+Possib}} (int what\+Piece\+\_\+row, int what\+Piece\+\_\+column)
+\begin{DoxyCompactList}\small\item\em funkcja zapisująca ruch wiezy i ustawiająca możliwość orszady na false wywoływana po wykonaniu ruchu przez wieżę w move\+Piece \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_chess_game_ad8e0b4d1f80b352c34a3c3cb8af65fad}{is\+Castle\+Move}} (char piece\+Color, int put\+Where\+\_\+row, int put\+Where\+\_\+column)
+\begin{DoxyCompactList}\small\item\em funkcja sprawdzająca czy roszada na dane pole jest możliwa wywoływana w sprawdzeniu dostępności pól (dla króla) oraz przy wykonywaniu ruchu \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chess_game_a1cd4dbef73e922581de01f2e50515581}{remove\+Piece}} (int row, int column)
+\begin{DoxyCompactList}\small\item\em funkcja usuwająca pionek z tablicy board (zamieniająca wartość na EMPTY) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chess_game_a88cbf6f447ff24730904c3ee5bc582dc}{add\+Piece}} (char piece, int row, int column)
+\begin{DoxyCompactList}\small\item\em funkcja dodająca pionek do tablicy board \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chess_game_a82bde32cb3107a39dad542e0cf88f593}{reset\+Move}} (Move move)
+\begin{DoxyCompactList}\small\item\em funkcja resetująca wartości struktury Move -\/ na początku każdej nowej gry \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_chess_game_afff71707313a81dee8c38dedd0479ac3}{get\+Whos\+Check\+Mate}} () const
+\begin{DoxyCompactList}\small\item\em getter i setter pola whos\+Check\+Mate \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chess_game_aba6612cb088a3f05fd33589ebef1b46b}{set\+Whos\+Check\+Mate}} (char value)
+\item 
+\mbox{\hyperlink{class_player}{Player}} $\ast$ \mbox{\hyperlink{class_chess_game_a7d28d5fed95f54dce633c60f52a5d770}{get\+White}} () const
+\begin{DoxyCompactList}\small\item\em getter i setter pola \mbox{\hyperlink{class_player}{Player}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player}{Player}} $\ast$ \mbox{\hyperlink{class_chess_game_a8822b7af2d5c4a58223588fd85eccded}{get\+Black}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char \mbox{\hyperlink{class_chess_game_a4df4b316ebb80a930040019095e0a640}{WHITE\+\_\+\+COLOR}} = \textquotesingle{}w\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em stała biały kolor \end{DoxyCompactList}\item 
+const char \mbox{\hyperlink{class_chess_game_a693b82bd4438328aa003d12f47c947c5}{BLACK\+\_\+\+COLOR}} = \textquotesingle{}b\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em stała czarny kolor \end{DoxyCompactList}\item 
+const char \mbox{\hyperlink{class_chess_game_adb33157e08119a9cadda64751736fb2a}{WHITE\+\_\+\+KING}} = \textquotesingle{}K\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em stała pionek biały król \end{DoxyCompactList}\item 
+const char \mbox{\hyperlink{class_chess_game_ad4998b6bb96eab138dad56216491a74f}{BLACK\+\_\+\+KING}} = \textquotesingle{}k\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em stała pionek czarny król \end{DoxyCompactList}\item 
+const char \mbox{\hyperlink{class_chess_game_a04335022c7e78e2b52a828734296fdca}{EMPTY}} = 0x20
+\begin{DoxyCompactList}\small\item\em stała brak pionka na planszy \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_chess_game_a7c9d1caa97c7ca5737f187a6066662b2}\label{class_chess_game_a7c9d1caa97c7ca5737f187a6066662b2}} 
+\index{ChessGame@{ChessGame}!ChessGame@{ChessGame}}
+\index{ChessGame@{ChessGame}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{ChessGame()}{ChessGame()}}
+{\footnotesize\ttfamily Chess\+Game\+::\+Chess\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Konstruktor. 
+
+Tworzy instancję \mbox{\hyperlink{class_chess_game}{Chess\+Game}}, dwóch graczy \mbox{\hyperlink{class_player}{Player}}, ustawia kolej gracza białego, czyści informację o ruchach i szach mat ustawia początkowe pozycje króli wywoływany jest w kontrolerze 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_chess_game_a88cbf6f447ff24730904c3ee5bc582dc}\label{class_chess_game_a88cbf6f447ff24730904c3ee5bc582dc}} 
+\index{ChessGame@{ChessGame}!addPiece@{addPiece}}
+\index{addPiece@{addPiece}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{addPiece()}{addPiece()}}
+{\footnotesize\ttfamily void Chess\+Game\+::add\+Piece (\begin{DoxyParamCaption}\item[{char}]{piece,  }\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption})}
+
+
+
+funkcja dodająca pionek do tablicy board 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pionek,wiersz,kolumna} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chess_game_a45cd11f1d7ef389743d859f2a0237ca5}\label{class_chess_game_a45cd11f1d7ef389743d859f2a0237ca5}} 
+\index{ChessGame@{ChessGame}!addToCaptured@{addToCaptured}}
+\index{addToCaptured@{addToCaptured}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{addToCaptured()}{addToCaptured()}}
+{\footnotesize\ttfamily void Chess\+Game\+::add\+To\+Captured (\begin{DoxyParamCaption}\item[{char}]{piece }\end{DoxyParamCaption})}
+
+
+
+funkcja dodająca zbity pionek do wektora wzbitych pionków gracza 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zbity} & pionek (char) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chess_game_a58f2e5c3f05782d786b473c29000c3a5}\label{class_chess_game_a58f2e5c3f05782d786b473c29000c3a5}} 
+\index{ChessGame@{ChessGame}!changeTurn@{changeTurn}}
+\index{changeTurn@{changeTurn}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{changeTurn()}{changeTurn()}}
+{\footnotesize\ttfamily void Chess\+Game\+::change\+Turn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+setter pola whos\+Turn ustawia pole na przeciwne do teraźniejszego, jeżeli kolej była białego gracza to teraz będzie czarnego 
+
+\mbox{\Hypertarget{class_chess_game_a77814bbcb54f169c079a68cb24d82134}\label{class_chess_game_a77814bbcb54f169c079a68cb24d82134}} 
+\index{ChessGame@{ChessGame}!checkCheck@{checkCheck}}
+\index{checkCheck@{checkCheck}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{checkCheck()}{checkCheck()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily char Chess\+Game\+::check\+Check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+funkcja sprawdzająca czy w obecnym ustawieniu pionków na tablicy board jest możliwość zbicia króla jakiegokolwiek koloru czyli czy jest szach 
+
+\begin{DoxyReturn}{Returns}
+kolor gracza dla którego jest szach, gdy nie ma szacha funkcja zwraca EMPTY 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chess_game_aeb6384535c736f207d8b01a0cad0bce0}\label{class_chess_game_aeb6384535c736f207d8b01a0cad0bce0}} 
+\index{ChessGame@{ChessGame}!checkCheck@{checkCheck}}
+\index{checkCheck@{checkCheck}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{checkCheck()}{checkCheck()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Chess\+Game\+::check\+Check (\begin{DoxyParamCaption}\item[{char}]{color,  }\item[{int}]{what\+Piece\+\_\+row,  }\item[{int}]{what\+Piece\+\_\+column }\end{DoxyParamCaption})}
+
+
+
+nadpisanie metody check\+Check\+: funkcja sprawdzająca czy w nowym potencjalnym ustawieniu króla będzie szach wywoływana przy sprawdzaniu szach mat 
+
+
+\begin{DoxyParams}{Parameters}
+{\em czy} & jest szach dla króla w ustawieniu o kolorze color ustawionego na polu o współrzędnych what\+Piece\+\_\+row, what\+Piece\+\_\+column \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fałsz gdy nie ma szacha 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chess_game_a7d533965bbf8c2bd3ed52177217cd939}\label{class_chess_game_a7d533965bbf8c2bd3ed52177217cd939}} 
+\index{ChessGame@{ChessGame}!checkDiagonalMove@{checkDiagonalMove}}
+\index{checkDiagonalMove@{checkDiagonalMove}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{checkDiagonalMove()}{checkDiagonalMove()}}
+{\footnotesize\ttfamily bool Chess\+Game\+::check\+Diagonal\+Move (\begin{DoxyParamCaption}\item[{Move}]{move }\end{DoxyParamCaption})}
+
+
+
+funkcja pomocnicza przy ustalaniu czy ruch po skosie jest możliwy wywoływana w is\+Move\+Valid dla królowej i gońca 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obiekt} & Move\+: pionek, wiersz, kolumna, wiersz docelowy, kolumna docelowa \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+czy ruch jest możliwy dla danego ruchu move 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chess_game_a5c0041a6e90e5c73986877a042193b02}\label{class_chess_game_a5c0041a6e90e5c73986877a042193b02}} 
+\index{ChessGame@{ChessGame}!checkMate@{checkMate}}
+\index{checkMate@{checkMate}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{checkMate()}{checkMate()}}
+{\footnotesize\ttfamily bool Chess\+Game\+::check\+Mate (\begin{DoxyParamCaption}\item[{char}]{piece }\end{DoxyParamCaption})}
+
+
+
+funkcja sprawdzająca czy dla obecnego ustawienia pionków jest szach mat 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pionek} & króla który jest szachowany \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true gdy jest szach mat 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chess_game_a8c79d5b20d610a97ae95cdea682b2223}\label{class_chess_game_a8c79d5b20d610a97ae95cdea682b2223}} 
+\index{ChessGame@{ChessGame}!checkPieceAtPosition@{checkPieceAtPosition}}
+\index{checkPieceAtPosition@{checkPieceAtPosition}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{checkPieceAtPosition()}{checkPieceAtPosition()}}
+{\footnotesize\ttfamily char Chess\+Game\+::check\+Piece\+At\+Position (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption})}
+
+
+
+funkcja sprawdzająca tablicę board\mbox{[}8\mbox{]}\mbox{[}8\mbox{]} jaki pionek znajduje sie na danej pozycji 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wiersz,kolumna} & od 0 do 8 (indexowanie od lewej do prawej od góry do dołu) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pionek znajdujący się na tym polu (char) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chess_game_ad1e431f86de755e6caddebc25db7298f}\label{class_chess_game_ad1e431f86de755e6caddebc25db7298f}} 
+\index{ChessGame@{ChessGame}!doCastleMove@{doCastleMove}}
+\index{doCastleMove@{doCastleMove}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{doCastleMove()}{doCastleMove()}}
+{\footnotesize\ttfamily void Chess\+Game\+::do\+Castle\+Move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+funkcja pomocnicza wykonująca ruch roszadowy dla This\+Move 
+
+\mbox{\Hypertarget{class_chess_game_abe5619f0ea3cbc98f601376059d23ca3}\label{class_chess_game_abe5619f0ea3cbc98f601376059d23ca3}} 
+\index{ChessGame@{ChessGame}!doublePawnMove@{doublePawnMove}}
+\index{doublePawnMove@{doublePawnMove}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{doublePawnMove()}{doublePawnMove()}}
+{\footnotesize\ttfamily bool Chess\+Game\+::double\+Pawn\+Move (\begin{DoxyParamCaption}\item[{Move}]{move }\end{DoxyParamCaption})}
+
+
+
+funkcja pomocnicza przy ustalaniu czy ruch pionka o dwa pola do przodu jest możliwy wywoływana w is\+Move\+Valid 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obiekt} & Move\+: pionek, wiersz, kolumna, wiersz docelowy, kolumna docelowa \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+czy ruch jest możliwy dla danego ruchu move 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chess_game_a8822b7af2d5c4a58223588fd85eccded}\label{class_chess_game_a8822b7af2d5c4a58223588fd85eccded}} 
+\index{ChessGame@{ChessGame}!getBlack@{getBlack}}
+\index{getBlack@{getBlack}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{getBlack()}{getBlack()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_player}{Player}} $\ast$ Chess\+Game\+::get\+Black (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_chess_game_a384a218c740127f0ff61429f6e34fdcc}\label{class_chess_game_a384a218c740127f0ff61429f6e34fdcc}} 
+\index{ChessGame@{ChessGame}!getLastMove@{getLastMove}}
+\index{getLastMove@{getLastMove}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{getLastMove()}{getLastMove()}}
+{\footnotesize\ttfamily Chess\+Game\+::\+Move Chess\+Game\+::get\+Last\+Move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter obiektu Last\+Move zwraca ostatni ruch jaki był wykonany 
+
+\begin{DoxyReturn}{Returns}
+Last\+Move 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chess_game_ac33456bee1050132e25817da287cbed4}\label{class_chess_game_ac33456bee1050132e25817da287cbed4}} 
+\index{ChessGame@{ChessGame}!getPieceColor@{getPieceColor}}
+\index{getPieceColor@{getPieceColor}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{getPieceColor()}{getPieceColor()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+char Chess\+Game\+::get\+Piece\+Color (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{T}]{y = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+template ustalający kolor pionka na planszy na podstawie albo współrzędnych tablicy\+: rzędu i kolumny zdefiniowanych jako int od 0 do 7 albo pionka\+: char wilkiej lub małej litery 
+
+\begin{DoxyReturn}{Returns}
+kolor pionka na planszy (WHITE\+\_\+\+COLOR,BLACK\+\_\+\+COLOR) lub brak pionka (EMPTY) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chess_game_a7d28d5fed95f54dce633c60f52a5d770}\label{class_chess_game_a7d28d5fed95f54dce633c60f52a5d770}} 
+\index{ChessGame@{ChessGame}!getWhite@{getWhite}}
+\index{getWhite@{getWhite}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{getWhite()}{getWhite()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_player}{Player}} $\ast$ Chess\+Game\+::get\+White (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+getter i setter pola \mbox{\hyperlink{class_player}{Player}} 
+
+\mbox{\Hypertarget{class_chess_game_afff71707313a81dee8c38dedd0479ac3}\label{class_chess_game_afff71707313a81dee8c38dedd0479ac3}} 
+\index{ChessGame@{ChessGame}!getWhosCheckMate@{getWhosCheckMate}}
+\index{getWhosCheckMate@{getWhosCheckMate}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{getWhosCheckMate()}{getWhosCheckMate()}}
+{\footnotesize\ttfamily char Chess\+Game\+::get\+Whos\+Check\+Mate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+getter i setter pola whos\+Check\+Mate 
+
+\mbox{\Hypertarget{class_chess_game_a262ec5b9db57f8d89a1d706d75352155}\label{class_chess_game_a262ec5b9db57f8d89a1d706d75352155}} 
+\index{ChessGame@{ChessGame}!getWhosTurn@{getWhosTurn}}
+\index{getWhosTurn@{getWhosTurn}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{getWhosTurn()}{getWhosTurn()}}
+{\footnotesize\ttfamily char Chess\+Game\+::get\+Whos\+Turn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter pola whos\+Turn 
+
+\begin{DoxyReturn}{Returns}
+kolor gracza którego jest teraz kolej 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chess_game_a20298d8900be674dd560732f7d27e641}\label{class_chess_game_a20298d8900be674dd560732f7d27e641}} 
+\index{ChessGame@{ChessGame}!initializeBoard@{initializeBoard}}
+\index{initializeBoard@{initializeBoard}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{initializeBoard()}{initializeBoard()}}
+{\footnotesize\ttfamily void Chess\+Game\+::initialize\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+funkcja tworząca początkowe ustawienie pionków na planszy 
+
+\mbox{\Hypertarget{class_chess_game_ad8e0b4d1f80b352c34a3c3cb8af65fad}\label{class_chess_game_ad8e0b4d1f80b352c34a3c3cb8af65fad}} 
+\index{ChessGame@{ChessGame}!isCastleMove@{isCastleMove}}
+\index{isCastleMove@{isCastleMove}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{isCastleMove()}{isCastleMove()}}
+{\footnotesize\ttfamily bool Chess\+Game\+::is\+Castle\+Move (\begin{DoxyParamCaption}\item[{char}]{piece\+Color,  }\item[{int}]{put\+Where\+\_\+row,  }\item[{int}]{put\+Where\+\_\+column }\end{DoxyParamCaption})}
+
+
+
+funkcja sprawdzająca czy roszada na dane pole jest możliwa wywoływana w sprawdzeniu dostępności pól (dla króla) oraz przy wykonywaniu ruchu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kolor} & króla, parametry poruszonejgo króla docelowy wiersz i docelowa kolumna \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chess_game_a2dadf58306caae13d3a784e4b5a085cd}\label{class_chess_game_a2dadf58306caae13d3a784e4b5a085cd}} 
+\index{ChessGame@{ChessGame}!isKingsMoveValid@{isKingsMoveValid}}
+\index{isKingsMoveValid@{isKingsMoveValid}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{isKingsMoveValid()}{isKingsMoveValid()}}
+{\footnotesize\ttfamily bool Chess\+Game\+::is\+Kings\+Move\+Valid (\begin{DoxyParamCaption}\item[{char}]{color,  }\item[{int}]{put\+Where\+\_\+row,  }\item[{int}]{put\+Where\+\_\+column }\end{DoxyParamCaption})}
+
+
+
+funkcja spprawdzająca czy potencjalny ruch króla jest możliwy wywoływana przy sprawdzeniu czy ruch jest możliwy oraz przy sprawdzeniu szach mat 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kolor} & króla, wiersz docelowy, kolumna docelowa króla \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+zwraca true gdy ruch króla jest możliwy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chess_game_a8d6234d5c417f5deea1e368abba8932b}\label{class_chess_game_a8d6234d5c417f5deea1e368abba8932b}} 
+\index{ChessGame@{ChessGame}!isMoveValid@{isMoveValid}}
+\index{isMoveValid@{isMoveValid}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{isMoveValid()}{isMoveValid()}}
+{\footnotesize\ttfamily bool Chess\+Game\+::is\+Move\+Valid (\begin{DoxyParamCaption}\item[{Move}]{move }\end{DoxyParamCaption})}
+
+
+
+funkcja is\+Move\+Valid po podaniu struktury move sprawdza czy ruch jest możliwy dla danego pionka (w zależności od figury) na dane pole sprawdza również czy na docelowym polu nie ma pionka w tym samym kolorze funkcja ta wykorzystywana jest przy podświetlaniu pól aktywnych na planszy jak i pprzy sprawdzeniu szacha i szach mat 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & zawiera informację o pionku i o potencjalnym ruchu z jakiego miajsca na jakie (rząd, kolumna) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+zwraca fałsz gdy ruch nie jest możliwy, true gdy jest możliwy (nie narusza zasad gry w sachy) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chess_game_abb28166d01976848b4737037b41744c1}\label{class_chess_game_abb28166d01976848b4737037b41744c1}} 
+\index{ChessGame@{ChessGame}!movePiece@{movePiece}}
+\index{movePiece@{movePiece}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{movePiece()}{movePiece()}}
+{\footnotesize\ttfamily void Chess\+Game\+::move\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+funkcja move\+Piece wykonująca ruch na tablicy board na podstawie informacji o ruchu This\+Move usuwa pionek i stawia go w nowy miejscu wywołuje funkcje aktualizujące parametry gry 
+
+\mbox{\Hypertarget{class_chess_game_a1cd4dbef73e922581de01f2e50515581}\label{class_chess_game_a1cd4dbef73e922581de01f2e50515581}} 
+\index{ChessGame@{ChessGame}!removePiece@{removePiece}}
+\index{removePiece@{removePiece}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{removePiece()}{removePiece()}}
+{\footnotesize\ttfamily void Chess\+Game\+::remove\+Piece (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption})}
+
+
+
+funkcja usuwająca pionek z tablicy board (zamieniająca wartość na EMPTY) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wiersz} & kolumna \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chess_game_a82bde32cb3107a39dad542e0cf88f593}\label{class_chess_game_a82bde32cb3107a39dad542e0cf88f593}} 
+\index{ChessGame@{ChessGame}!resetMove@{resetMove}}
+\index{resetMove@{resetMove}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{resetMove()}{resetMove()}}
+{\footnotesize\ttfamily void Chess\+Game\+::reset\+Move (\begin{DoxyParamCaption}\item[{Move}]{move }\end{DoxyParamCaption})}
+
+
+
+funkcja resetująca wartości struktury Move -\/ na początku każdej nowej gry 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chess_game_a53b5e3f219be81159db630c1b2a83ddc}\label{class_chess_game_a53b5e3f219be81159db630c1b2a83ddc}} 
+\index{ChessGame@{ChessGame}!returnAvailableFields@{returnAvailableFields}}
+\index{returnAvailableFields@{returnAvailableFields}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{returnAvailableFields()}{returnAvailableFields()}}
+{\footnotesize\ttfamily vector$<$ int $>$ $\ast$ Chess\+Game\+::return\+Available\+Fields (\begin{DoxyParamCaption}\item[{int}]{what\+Piece\+\_\+row,  }\item[{int}]{what\+Piece\+\_\+column }\end{DoxyParamCaption})}
+
+
+
+funkcja zwracająca dostępne pola do poruszenia w postaci wektora dla pionka położonego (what\+Piece\+\_\+row,what\+Piece\+\_\+column) wywoływana w kontrolerze 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wiersz,kolumna} & pionka dla którego sprawdzane są możliwości ruchu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+wskaźnik do wektora dostępnych pól \texorpdfstring{$<$}{<}int wiersz1, int kolumna1,int wiersz2, int kolumna2 \texorpdfstring{$>$}{>} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chess_game_ae00a5900fa9d93d5d59e9892dd24edcc}\label{class_chess_game_ae00a5900fa9d93d5d59e9892dd24edcc}} 
+\index{ChessGame@{ChessGame}!saveCastlePossib@{saveCastlePossib}}
+\index{saveCastlePossib@{saveCastlePossib}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{saveCastlePossib()}{saveCastlePossib()}}
+{\footnotesize\ttfamily void Chess\+Game\+::save\+Castle\+Possib (\begin{DoxyParamCaption}\item[{int}]{what\+Piece\+\_\+row,  }\item[{int}]{what\+Piece\+\_\+column }\end{DoxyParamCaption})}
+
+
+
+funkcja zapisująca ruch wiezy i ustawiająca możliwość orszady na false wywoływana po wykonaniu ruchu przez wieżę w move\+Piece 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parametry} & poruszonej wieży wiersz i kolumna \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chess_game_a1834fc1be8509272f29bb72a5e50847e}\label{class_chess_game_a1834fc1be8509272f29bb72a5e50847e}} 
+\index{ChessGame@{ChessGame}!saveLastMove@{saveLastMove}}
+\index{saveLastMove@{saveLastMove}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{saveLastMove()}{saveLastMove()}}
+{\footnotesize\ttfamily void Chess\+Game\+::save\+Last\+Move (\begin{DoxyParamCaption}\item[{char}]{\+\_\+figure,  }\item[{int}]{\+\_\+what\+Piece\+\_\+row,  }\item[{int}]{\+\_\+what\+Piece\+\_\+column,  }\item[{int}]{\+\_\+put\+Where\+\_\+row,  }\item[{int}]{\+\_\+put\+Where\+\_\+column }\end{DoxyParamCaption})}
+
+
+
+setter obiektu Last\+Move ustawia ostatni ruch jaki był wykonany 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parametry} & Move\+: pionek, wiersz, kolumna, wiersz docelowy, kolumna docelowa \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chess_game_abd323d512455c8518bfd2bf26ec2e812}\label{class_chess_game_abd323d512455c8518bfd2bf26ec2e812}} 
+\index{ChessGame@{ChessGame}!saveNewKingsPosition@{saveNewKingsPosition}}
+\index{saveNewKingsPosition@{saveNewKingsPosition}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{saveNewKingsPosition()}{saveNewKingsPosition()}}
+{\footnotesize\ttfamily void Chess\+Game\+::save\+New\+Kings\+Position (\begin{DoxyParamCaption}\item[{char}]{piece,  }\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption})}
+
+
+
+funkcja zapisująca nową pozycję króla wywoływana po wykonaniu ruchu w move\+Piece 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wiersz} & docelowy, kolumna docelowa króla \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chess_game_afd41c67e994941cf7fa90a778a11145d}\label{class_chess_game_afd41c67e994941cf7fa90a778a11145d}} 
+\index{ChessGame@{ChessGame}!saveThisMove@{saveThisMove}}
+\index{saveThisMove@{saveThisMove}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{saveThisMove()}{saveThisMove()}}
+{\footnotesize\ttfamily void Chess\+Game\+::save\+This\+Move (\begin{DoxyParamCaption}\item[{char}]{\+\_\+figure,  }\item[{int}]{\+\_\+what\+Piece\+\_\+row,  }\item[{int}]{\+\_\+what\+Piece\+\_\+column,  }\item[{int}]{\+\_\+put\+Where\+\_\+row,  }\item[{int}]{\+\_\+put\+Where\+\_\+column }\end{DoxyParamCaption})}
+
+
+
+setter obiektu This\+Move ustawia obecny/potencjalny (jeszcze nie dokonany) ruch 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parametry} & Move\+: pionek, wiersz, kolumna, wiersz docelowy, kolumna docelowa \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chess_game_a8334c75e5ccb6115d42bbe913a902ed2}\label{class_chess_game_a8334c75e5ccb6115d42bbe913a902ed2}} 
+\index{ChessGame@{ChessGame}!setChecktoFalse@{setChecktoFalse}}
+\index{setChecktoFalse@{setChecktoFalse}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{setChecktoFalse()}{setChecktoFalse()}}
+{\footnotesize\ttfamily void Chess\+Game\+::set\+Checkto\+False (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+setter funkcja po sprawdzeniu czy jest szach na planszy ustawia has\+Check na false dla obu graczy 
+
+\mbox{\Hypertarget{class_chess_game_aba6612cb088a3f05fd33589ebef1b46b}\label{class_chess_game_aba6612cb088a3f05fd33589ebef1b46b}} 
+\index{ChessGame@{ChessGame}!setWhosCheckMate@{setWhosCheckMate}}
+\index{setWhosCheckMate@{setWhosCheckMate}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{setWhosCheckMate()}{setWhosCheckMate()}}
+{\footnotesize\ttfamily void Chess\+Game\+::set\+Whos\+Check\+Mate (\begin{DoxyParamCaption}\item[{char}]{value }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_chess_game_a693b82bd4438328aa003d12f47c947c5}\label{class_chess_game_a693b82bd4438328aa003d12f47c947c5}} 
+\index{ChessGame@{ChessGame}!BLACK\_COLOR@{BLACK\_COLOR}}
+\index{BLACK\_COLOR@{BLACK\_COLOR}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{BLACK\_COLOR}{BLACK\_COLOR}}
+{\footnotesize\ttfamily const char Chess\+Game\+::\+BLACK\+\_\+\+COLOR = \textquotesingle{}b\textquotesingle{}}
+
+
+
+stała czarny kolor 
+
+\mbox{\Hypertarget{class_chess_game_ad4998b6bb96eab138dad56216491a74f}\label{class_chess_game_ad4998b6bb96eab138dad56216491a74f}} 
+\index{ChessGame@{ChessGame}!BLACK\_KING@{BLACK\_KING}}
+\index{BLACK\_KING@{BLACK\_KING}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{BLACK\_KING}{BLACK\_KING}}
+{\footnotesize\ttfamily const char Chess\+Game\+::\+BLACK\+\_\+\+KING = \textquotesingle{}k\textquotesingle{}}
+
+
+
+stała pionek czarny król 
+
+\mbox{\Hypertarget{class_chess_game_a04335022c7e78e2b52a828734296fdca}\label{class_chess_game_a04335022c7e78e2b52a828734296fdca}} 
+\index{ChessGame@{ChessGame}!EMPTY@{EMPTY}}
+\index{EMPTY@{EMPTY}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{EMPTY}{EMPTY}}
+{\footnotesize\ttfamily const char Chess\+Game\+::\+EMPTY = 0x20}
+
+
+
+stała brak pionka na planszy 
+
+\mbox{\Hypertarget{class_chess_game_a4df4b316ebb80a930040019095e0a640}\label{class_chess_game_a4df4b316ebb80a930040019095e0a640}} 
+\index{ChessGame@{ChessGame}!WHITE\_COLOR@{WHITE\_COLOR}}
+\index{WHITE\_COLOR@{WHITE\_COLOR}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{WHITE\_COLOR}{WHITE\_COLOR}}
+{\footnotesize\ttfamily const char Chess\+Game\+::\+WHITE\+\_\+\+COLOR = \textquotesingle{}w\textquotesingle{}}
+
+
+
+stała biały kolor 
+
+\mbox{\Hypertarget{class_chess_game_adb33157e08119a9cadda64751736fb2a}\label{class_chess_game_adb33157e08119a9cadda64751736fb2a}} 
+\index{ChessGame@{ChessGame}!WHITE\_KING@{WHITE\_KING}}
+\index{WHITE\_KING@{WHITE\_KING}!ChessGame@{ChessGame}}
+\doxysubsubsection{\texorpdfstring{WHITE\_KING}{WHITE\_KING}}
+{\footnotesize\ttfamily const char Chess\+Game\+::\+WHITE\+\_\+\+KING = \textquotesingle{}K\textquotesingle{}}
+
+
+
+stała pionek biały król 
+

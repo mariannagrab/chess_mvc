@@ -1,0 +1,184 @@
+\hypertarget{class_board_piece}{}\doxysection{Board\+Piece Class Reference}
+\label{class_board_piece}\index{BoardPiece@{BoardPiece}}
+
+
+klasa \mbox{\hyperlink{class_board_piece}{Board\+Piece}}, dziedzicząca po QLabel tworzy kwadrat w GUI  
+
+
+
+
+{\ttfamily \#include $<$boardpiece.\+h$>$}
+
+Inheritance diagram for Board\+Piece\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_board_piece}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_board_piece_a7f0305ab415502324f92c78b30f6f860}{clicked}} (int row, int column)
+\begin{DoxyCompactList}\small\item\em sygnał kliknięcia na \mbox{\hyperlink{class_board_piece}{Board\+Piece}} wysyłany do klasy \mbox{\hyperlink{class_board}{Board}} -\/ validateclick() \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_board_piece_af81fcdf1ad243536044f9dd309ab59ee}{Board\+Piece}} (int row, int column, QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_piece_abcd922dea9a269243940bace78ad4077}{set\+Color}} (bool color)
+\begin{DoxyCompactList}\small\item\em setter pola color \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_piece_a2a8fba624460d973c4f2ab50e163089f}{unhighlight}} ()
+\begin{DoxyCompactList}\small\item\em odświetla dany kwadrat (przywraca mu kolor pola color) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_piece_acc4ad197f106de0aeb3673f51cf5755f}{highlight}} ()
+\begin{DoxyCompactList}\small\item\em zaznacza dany kwadrat (przydziela mu kolor tła czarwony) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_board_piece_a72d99d16b702e5f3f3ecb4ac63636b6a}{getis\+Selected}} ()
+\begin{DoxyCompactList}\small\item\em getter i setter pola is\+Selected informacji czy kwadrat jest kliknięty rzez gracza \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_piece_a597733ff1488424a59f348d044d30ae3}{setis\+Selected}} (bool value)
+\item 
+QString \mbox{\hyperlink{class_board_piece_a7377e7e87da4dd3191e02c138f994254}{get\+Color}} ()
+\begin{DoxyCompactList}\small\item\em getter pola color -\/ używany przy powrocie kwadratu po podświetleniu \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_board_piece_a5f8837eeca879b8a569f6038e52d3b0d}{getis\+Move\+Poss\+There}} () const
+\begin{DoxyCompactList}\small\item\em getter i setter pola is\+Move\+Poss\+There czy jest możliwy ruch pionka na to pole \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_piece_a0323475b0133e5e6edd8913c164d4544}{setis\+Move\+Poss\+There}} (bool value)
+\item 
+int \mbox{\hyperlink{class_board_piece_a254a4fe8f47a3c6a819f459ec96cea7c}{get\+Row}} () const
+\begin{DoxyCompactList}\small\item\em getter pola Row \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_board_piece_ae58be5ba8098e8d02ae95e86b635f054}{get\+Column}} () const
+\begin{DoxyCompactList}\small\item\em getter pola Column \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_board_piece_ad82bc8f365b6301979e8b95ed7aa4efd}{mouse\+Press\+Event}} (QMouse\+Event $\ast$event)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+klasa \mbox{\hyperlink{class_board_piece}{Board\+Piece}}, dziedzicząca po QLabel tworzy kwadrat w GUI 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_board_piece_af81fcdf1ad243536044f9dd309ab59ee}\label{class_board_piece_af81fcdf1ad243536044f9dd309ab59ee}} 
+\index{BoardPiece@{BoardPiece}!BoardPiece@{BoardPiece}}
+\index{BoardPiece@{BoardPiece}!BoardPiece@{BoardPiece}}
+\doxysubsubsection{\texorpdfstring{BoardPiece()}{BoardPiece()}}
+{\footnotesize\ttfamily Board\+Piece\+::\+Board\+Piece (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor. 
+
+tworzy kwadrat, ustawia jego rozmiary 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_board_piece_a7f0305ab415502324f92c78b30f6f860}\label{class_board_piece_a7f0305ab415502324f92c78b30f6f860}} 
+\index{BoardPiece@{BoardPiece}!clicked@{clicked}}
+\index{clicked@{clicked}!BoardPiece@{BoardPiece}}
+\doxysubsubsection{\texorpdfstring{clicked}{clicked}}
+{\footnotesize\ttfamily void Board\+Piece\+::clicked (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+sygnał kliknięcia na \mbox{\hyperlink{class_board_piece}{Board\+Piece}} wysyłany do klasy \mbox{\hyperlink{class_board}{Board}} -\/ validateclick() 
+
+\mbox{\Hypertarget{class_board_piece_a7377e7e87da4dd3191e02c138f994254}\label{class_board_piece_a7377e7e87da4dd3191e02c138f994254}} 
+\index{BoardPiece@{BoardPiece}!getColor@{getColor}}
+\index{getColor@{getColor}!BoardPiece@{BoardPiece}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily QString Board\+Piece\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter pola color -\/ używany przy powrocie kwadratu po podświetleniu 
+
+\mbox{\Hypertarget{class_board_piece_ae58be5ba8098e8d02ae95e86b635f054}\label{class_board_piece_ae58be5ba8098e8d02ae95e86b635f054}} 
+\index{BoardPiece@{BoardPiece}!getColumn@{getColumn}}
+\index{getColumn@{getColumn}!BoardPiece@{BoardPiece}}
+\doxysubsubsection{\texorpdfstring{getColumn()}{getColumn()}}
+{\footnotesize\ttfamily int Board\+Piece\+::get\+Column (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+getter pola Column 
+
+\mbox{\Hypertarget{class_board_piece_a5f8837eeca879b8a569f6038e52d3b0d}\label{class_board_piece_a5f8837eeca879b8a569f6038e52d3b0d}} 
+\index{BoardPiece@{BoardPiece}!getisMovePossThere@{getisMovePossThere}}
+\index{getisMovePossThere@{getisMovePossThere}!BoardPiece@{BoardPiece}}
+\doxysubsubsection{\texorpdfstring{getisMovePossThere()}{getisMovePossThere()}}
+{\footnotesize\ttfamily bool Board\+Piece\+::getis\+Move\+Poss\+There (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+getter i setter pola is\+Move\+Poss\+There czy jest możliwy ruch pionka na to pole 
+
+\mbox{\Hypertarget{class_board_piece_a72d99d16b702e5f3f3ecb4ac63636b6a}\label{class_board_piece_a72d99d16b702e5f3f3ecb4ac63636b6a}} 
+\index{BoardPiece@{BoardPiece}!getisSelected@{getisSelected}}
+\index{getisSelected@{getisSelected}!BoardPiece@{BoardPiece}}
+\doxysubsubsection{\texorpdfstring{getisSelected()}{getisSelected()}}
+{\footnotesize\ttfamily bool Board\+Piece\+::getis\+Selected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter i setter pola is\+Selected informacji czy kwadrat jest kliknięty rzez gracza 
+
+\mbox{\Hypertarget{class_board_piece_a254a4fe8f47a3c6a819f459ec96cea7c}\label{class_board_piece_a254a4fe8f47a3c6a819f459ec96cea7c}} 
+\index{BoardPiece@{BoardPiece}!getRow@{getRow}}
+\index{getRow@{getRow}!BoardPiece@{BoardPiece}}
+\doxysubsubsection{\texorpdfstring{getRow()}{getRow()}}
+{\footnotesize\ttfamily int Board\+Piece\+::get\+Row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+getter pola Row 
+
+\mbox{\Hypertarget{class_board_piece_acc4ad197f106de0aeb3673f51cf5755f}\label{class_board_piece_acc4ad197f106de0aeb3673f51cf5755f}} 
+\index{BoardPiece@{BoardPiece}!highlight@{highlight}}
+\index{highlight@{highlight}!BoardPiece@{BoardPiece}}
+\doxysubsubsection{\texorpdfstring{highlight()}{highlight()}}
+{\footnotesize\ttfamily void Board\+Piece\+::highlight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+zaznacza dany kwadrat (przydziela mu kolor tła czarwony) 
+
+\mbox{\Hypertarget{class_board_piece_ad82bc8f365b6301979e8b95ed7aa4efd}\label{class_board_piece_ad82bc8f365b6301979e8b95ed7aa4efd}} 
+\index{BoardPiece@{BoardPiece}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!BoardPiece@{BoardPiece}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void Board\+Piece\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_board_piece_abcd922dea9a269243940bace78ad4077}\label{class_board_piece_abcd922dea9a269243940bace78ad4077}} 
+\index{BoardPiece@{BoardPiece}!setColor@{setColor}}
+\index{setColor@{setColor}!BoardPiece@{BoardPiece}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Board\+Piece\+::set\+Color (\begin{DoxyParamCaption}\item[{bool}]{color }\end{DoxyParamCaption})}
+
+
+
+setter pola color 
+
+
+\begin{DoxyParams}{Parameters}
+{\em true} & ustawia kolor na jasnoszary, false na ciemnoszary \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_board_piece_a0323475b0133e5e6edd8913c164d4544}\label{class_board_piece_a0323475b0133e5e6edd8913c164d4544}} 
+\index{BoardPiece@{BoardPiece}!setisMovePossThere@{setisMovePossThere}}
+\index{setisMovePossThere@{setisMovePossThere}!BoardPiece@{BoardPiece}}
+\doxysubsubsection{\texorpdfstring{setisMovePossThere()}{setisMovePossThere()}}
+{\footnotesize\ttfamily void Board\+Piece\+::setis\+Move\+Poss\+There (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_board_piece_a597733ff1488424a59f348d044d30ae3}\label{class_board_piece_a597733ff1488424a59f348d044d30ae3}} 
+\index{BoardPiece@{BoardPiece}!setisSelected@{setisSelected}}
+\index{setisSelected@{setisSelected}!BoardPiece@{BoardPiece}}
+\doxysubsubsection{\texorpdfstring{setisSelected()}{setisSelected()}}
+{\footnotesize\ttfamily void Board\+Piece\+::setis\+Selected (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_board_piece_a2a8fba624460d973c4f2ab50e163089f}\label{class_board_piece_a2a8fba624460d973c4f2ab50e163089f}} 
+\index{BoardPiece@{BoardPiece}!unhighlight@{unhighlight}}
+\index{unhighlight@{unhighlight}!BoardPiece@{BoardPiece}}
+\doxysubsubsection{\texorpdfstring{unhighlight()}{unhighlight()}}
+{\footnotesize\ttfamily void Board\+Piece\+::unhighlight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+odświetla dany kwadrat (przywraca mu kolor pola color) 
+

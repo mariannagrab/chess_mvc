@@ -1,0 +1,29 @@
+\hypertarget{controller_8h_source}{}\doxysection{controller.\+h}
+\mbox{\hyperlink{controller_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CONTROLLER\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CONTROLLER\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{chessgame_8h}{model\(\backslash\)chessgame.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mainwindow_8h}{view\(\backslash\)mainwindow.h}}"{}}}
+\DoxyCodeLine{10 \textcolor{keywordtype}{void} \mbox{\hyperlink{controller_8h_a60de64d75454385b23995437f1d72669}{start}}();}
+\DoxyCodeLine{11 \textcolor{keywordtype}{void} \mbox{\hyperlink{controller_8h_ab10ce10dd022281e216ffa1fb854bceb}{newGame}}();}
+\DoxyCodeLine{12 \textcolor{keywordtype}{void} \mbox{\hyperlink{controller_8h_aa5cd0b13e9579fbd9b3f538ebae81d99}{quitGame}}();}
+\DoxyCodeLine{16 \textcolor{keywordtype}{char} \mbox{\hyperlink{controller_8h_a27cd5d0fc13f7b1dd77d60f2c4e9981b}{getPieceFromPosition}}(\textcolor{keywordtype}{int} row,\textcolor{keywordtype}{int} column);}
+\DoxyCodeLine{22 vector<int>* \mbox{\hyperlink{controller_8h_a741e0f837753789974a36f8d47d90153}{checkAvailableMoves}}(\textcolor{keywordtype}{int} row, \textcolor{keywordtype}{int} column);}
+\DoxyCodeLine{28    \textcolor{comment}{//}}
+\DoxyCodeLine{29 \textcolor{keywordtype}{void} \mbox{\hyperlink{controller_8h_a1db4b744f24228ac6b4f00ddf70b4d53}{movePiece}}(\textcolor{keywordtype}{int} whatPiece\_row,\textcolor{keywordtype}{int} whatPiece\_column, \textcolor{keywordtype}{int} putWhere\_row, \textcolor{keywordtype}{int} putWhere\_column);}
+\DoxyCodeLine{34 \textcolor{keywordtype}{char} \mbox{\hyperlink{controller_8h_af4146f71b69ce0a163e6d2cc85255dac}{getWhosTurn}}();}
+\DoxyCodeLine{39 \textcolor{keywordtype}{char} \mbox{\hyperlink{controller_8h_ad8d9f2778bfe7370443e5e3cf1a5d6cb}{checkPieceColor}}(\textcolor{keywordtype}{char} piece);}
+\DoxyCodeLine{43 \textcolor{keywordtype}{void} \mbox{\hyperlink{controller_8h_acabbd2d85196877f29df62ebf41b7c2a}{displayTurn}}();}
+\DoxyCodeLine{47 \textcolor{keywordtype}{void} \mbox{\hyperlink{controller_8h_a9965b7ee2a65a7fd3f7b8ea71172e1ef}{displayCheckInfo}}();}
+\DoxyCodeLine{51 \textcolor{keywordtype}{void} \mbox{\hyperlink{controller_8h_aa84eacbbf107c38cbd512d9f7ddcdb55}{displayEndOfGame}}();}
+\DoxyCodeLine{56 \textcolor{keywordtype}{bool} \mbox{\hyperlink{controller_8h_a9515b0ea4b74cc3296de6f7026c0fb2a}{isCheckMate}}();}
+\DoxyCodeLine{60 \textcolor{keywordtype}{void} \mbox{\hyperlink{controller_8h_ac7748d33f854120702115265fba4f6af}{displayCapturedPieces}}();}
+\DoxyCodeLine{65 \textcolor{keywordtype}{char} \mbox{\hyperlink{controller_8h_a6fcfdf2b7b4c1f80d846d4493834a401}{getCapturedPiece}}(\textcolor{keywordtype}{char} color);}
+\DoxyCodeLine{71 \textcolor{keywordtype}{int} \mbox{\hyperlink{controller_8h_af31f688368cfb3b3c545ecb80e5f2b0d}{getCountCapturedPiece}}(\textcolor{keywordtype}{char} color);}
+\DoxyCodeLine{75 \textcolor{keywordtype}{void} \mbox{\hyperlink{controller_8h_a42a0e5d633fce21d12cb7d8a9b322a3f}{clearCaptured}}();}
+\DoxyCodeLine{79 \textcolor{keywordtype}{void} \mbox{\hyperlink{controller_8h_a97feb8702b4bc47a3dee7bf3b220da2b}{updateGame}}();}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// CONTROLLER\_H}}
+
+\end{DoxyCode}

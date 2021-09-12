@@ -1,0 +1,28 @@
+\hypertarget{board_8h_source}{}\doxysection{board.\+h}
+\mbox{\hyperlink{board_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef BOARD\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define BOARD\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{boardpiece_8h}{boardpiece.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QLabel>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_board}{Board}} : \textcolor{keyword}{public} QWidget}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     Q\_OBJECT}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_board_piece}{BoardPiece}} *boarpieces[8][8]; }
+\DoxyCodeLine{18     \mbox{\hyperlink{class_board_piece}{BoardPiece}} *selectedBoardPiece; }
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_board_ad94f044a14025dc1c3fede4e3828898b}{Board}}(QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{31     \mbox{\hyperlink{class_board_piece}{BoardPiece}} *\mbox{\hyperlink{class_board_aff591d76d6010d68cc806b7d8b70caa5}{getSelectedBoardPiece}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_board_aec9de8b63260a4fd07fe1685a0180653}{setSelectedBoardPiece}}(\mbox{\hyperlink{class_board_piece}{BoardPiece}} *value);}
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_board_a48c92ae4e8e0527f9df4a27328fe9ff8}{addPieces}}();}
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_board_af83b90749b7c691206b5e67ad27e841e}{clearAllAfterMove}}();}
+\DoxyCodeLine{41 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_board_ae7e23b09d82af46f4f8d42538147b02b}{validateClick}}(\textcolor{keywordtype}{int} row, \textcolor{keywordtype}{int} column);}
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_board_a5da15a0722bd700581cd948097e4c7da}{validateButtonClick}}();}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BOARD\_H}}
+
+\end{DoxyCode}

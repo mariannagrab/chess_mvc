@@ -1,0 +1,37 @@
+\hypertarget{boardpiece_8h_source}{}\doxysection{boardpiece.\+h}
+\label{boardpiece_8h_source}\index{view/boardpiece.h@{view/boardpiece.h}}
+\mbox{\hyperlink{boardpiece_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef BOARDPIECE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define BOARDPIECE\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <QLabel>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QWidget>}}
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_board_piece}{BoardPiece}} : \textcolor{keyword}{public} QLabel}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     Q\_OBJECT}
+\DoxyCodeLine{13     \textcolor{keyword}{const} QSize siz = QSize(100,100); }
+\DoxyCodeLine{14     \textcolor{keywordtype}{int} row,column; }
+\DoxyCodeLine{15     \textcolor{keywordtype}{bool} isSelected; }
+\DoxyCodeLine{16     QString color; }
+\DoxyCodeLine{17     \textcolor{keywordtype}{bool} isMovePossThere; }
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_board_piece_af81fcdf1ad243536044f9dd309ab59ee}{BoardPiece}}(\textcolor{keywordtype}{int} row, \textcolor{keywordtype}{int} column, QWidget *parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_board_piece_abcd922dea9a269243940bace78ad4077}{setColor}}(\textcolor{keywordtype}{bool} color);}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_board_piece_a2a8fba624460d973c4f2ab50e163089f}{unhighlight}}();}
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_board_piece_acc4ad197f106de0aeb3673f51cf5755f}{highlight}}();}
+\DoxyCodeLine{40     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_board_piece_a72d99d16b702e5f3f3ecb4ac63636b6a}{getisSelected}}();}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_board_piece_a597733ff1488424a59f348d044d30ae3}{setisSelected}}(\textcolor{keywordtype}{bool} value);}
+\DoxyCodeLine{45     QString \mbox{\hyperlink{class_board_piece_a7377e7e87da4dd3191e02c138f994254}{getColor}}();}
+\DoxyCodeLine{49     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_board_piece_a5f8837eeca879b8a569f6038e52d3b0d}{getisMovePossThere}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_board_piece_a0323475b0133e5e6edd8913c164d4544}{setisMovePossThere}}(\textcolor{keywordtype}{bool} value);}
+\DoxyCodeLine{54     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_board_piece_a254a4fe8f47a3c6a819f459ec96cea7c}{getRow}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{58     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_board_piece_ae58be5ba8098e8d02ae95e86b635f054}{getColumn}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{59 signals:}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_board_piece_a7f0305ab415502324f92c78b30f6f860}{clicked}}(\textcolor{keywordtype}{int} row, \textcolor{keywordtype}{int} column);}
+\DoxyCodeLine{64 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{65     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_board_piece_ad82bc8f365b6301979e8b95ed7aa4efd}{mousePressEvent}}(QMouseEvent *event);}
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// BOARDPIECE\_H}}
+
+\end{DoxyCode}
